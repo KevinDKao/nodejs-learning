@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Learning - Welcome</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>🚀 Node.js Learning</h2>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="active">Home</a>
+                <a href="/about">About</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Node.js Learning!</h1>
+                <p class="hero-subtitle">Your journey into web development starts here</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn btn-primary">Learn More</a>
+                    <a href="#demo" class="btn btn-secondary">Try Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2>What You'll Learn</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Web Servers</h3>
+                    <p>Learn how to create and run web servers using Express.js</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>File Serving</h3>
+                    <p>Serve static files like HTML, CSS, and JavaScript</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛣️</div>
+                    <h3>Routing</h3>
+                    <p>Handle different URLs and create multiple pages</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>APIs</h3>
+                    <p>Create API endpoints to handle data</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="demo">
+            <h2>Interactive Demo</h2>
+            <p>Try sending a message to see the API in action!</p>
+            
+            <form id="messageForm" class="message-form">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+
+            <div id="response" class="response-area" style="display: none;">
+                <h3>Server Response:</h3>
+                <pre id="responseContent"></pre>
+            </div>
+        </section>
+
+        <section class="getting-started">
+            <h2>Getting Started</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Install Dependencies</h3>
+                    <code>npm install</code>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Start the Server</h3>
+                    <code>npm start</code>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Open Browser</h3>
+                    <code>http://localhost:3000</code>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Node.js Learning. Built with ❤️ for learning purposes.</p>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html> 
