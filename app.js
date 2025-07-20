@@ -1,9 +1,13 @@
 const express = require('express');
 const path = require('path');
+const axios = require('axios');
 
 // Create Express app
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Rust backend configuration
+const RUST_BACKEND_URL = process.env.RUST_BACKEND_URL || 'http://localhost:8080';
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -99,6 +103,70 @@ app.post('/api/message', (req, res) => {
         message: 'Message received!',
         data: { name, message }
     });
+});
+
+// Rust backend integration endpoints
+app.post('/api/process', async (req, res) => {
+    try {
+        const { data, operation } = req.body;
+        
+        if (!data || !operation) {
+            return res.status(400).json({
+                error: 'Data and operation are required'
+            });
+        }
+
+        console.log(`Processing request: ${operation} on ${data.length} items`);
+
+        // Forward request to Rust backend
+        const response = await axios.post(`${RUST_BACKEND_URL}/process`, {
+            data,
+            operation
+        });
+
+        res.json({
+            success: true,
+            ...response.data
+        });
+    } catch (error) {
+        console.error('Error processing with Rust backend:', error.message);
+        res.status(500).json({
+            error: 'Failed to process data',
+            details: error.message
+        });
+    }
+});
+
+app.get('/api/rust-health', async (req, res) => {
+    try {
+        const response = await axios.get(`${RUST_BACKEND_URL}/health`);
+        res.json({
+            success: true,
+            rust_backend: response.data
+        });
+    } catch (error) {
+        console.error('Error checking Rust backend health:', error.message);
+        res.status(503).json({
+            error: 'Rust backend is not available',
+            details: error.message
+        });
+    }
+});
+
+app.get('/api/rust-stats', async (req, res) => {
+    try {
+        const response = await axios.get(`${RUST_BACKEND_URL}/stats`);
+        res.json({
+            success: true,
+            stats: response.data
+        });
+    } catch (error) {
+        console.error('Error getting Rust backend stats:', error.message);
+        res.status(500).json({
+            error: 'Failed to get Rust backend stats',
+            details: error.message
+        });
+    }
 });
 
 // 404 handler

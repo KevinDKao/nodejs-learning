@@ -378,4 +378,113 @@ html {
 .error {
     border-color: #dc3545 !important;
     background-color: #f8d7da !important;
+}
+
+/* Rust backend section */
+.rust-demo {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 3rem;
+}
+
+.rust-demo h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.rust-demo > p {
+    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.rust-controls {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.rust-controls .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.rust-controls .form-group label {
+    color: white;
+    font-weight: 600;
+}
+
+.rust-controls .form-group input,
+.rust-controls .form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 5px;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.rust-controls .form-group input:focus,
+.rust-controls .form-group select:focus {
+    outline: none;
+    border-color: #ffd700;
+    background: rgba(255,255,255,0.2);
+}
+
+.rust-controls .form-group input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.rust-controls .form-group select option {
+    background: #333;
+    color: white;
+}
+
+.rust-stats {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.rust-stats h3 {
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.rust-stats .btn {
+    margin: 0 0.5rem;
+}
+
+.stats-display {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    text-align: left;
+}
+
+.stat-item {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 3px;
+}
+
+.stat-item.error {
+    background: rgba(220, 53, 69, 0.3);
+    border-left: 3px solid #dc3545;
+}
+
+#rustResponseContent {
+    background: rgba(0,0,0,0.3);
+    color: #ffd700;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.2);
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
 } 
